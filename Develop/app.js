@@ -10,6 +10,105 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 ​
 const render = require("./lib/htmlRenderer");
 ​
+const inquirer = require("inquirer");
+
+inquirer.prompt([
+    {
+        message: "What role are you trying to assign?",
+        name: "role"
+    },
+
+
+]).then(function (response) {
+    //let template
+
+    if(response.role == "Manager")
+    {
+        inquirer.prompt([
+            {
+                message: "What is the manager's name?",
+                name: "name"
+            },
+
+            {
+                message: "What is the manager's id?",
+                name: "id"
+            },
+
+            {
+                message: "What is the manager's email?",
+                name: "email"
+            },
+
+            {
+                message: "What is the manager's office number?",
+                name: "officeNumber"
+            }
+
+
+        ]).then(function (response){
+
+            const manager = new Manager(response.name, response.id,response.email,response.officeNumber); 
+
+        })
+    }
+
+    else if(response.role == "Intern")
+    {
+        inquirer.prompt([
+        {
+            message: "What is your intern's name? ",
+            name: "name"
+        },
+        {
+            message: "What is the intern's id?",
+            name: "id"
+        },
+        {
+            message: "What is your intern's email?",
+            name: "email"
+        },
+        {
+            message: "What school is your intern from?",
+            name: "school"
+        }
+
+
+    ]).then(function(response){
+        
+        const intern = new Intern(response.name, response.id, response.email, response.school);
+    
+    })
+ }
+    else if (response.role == "Engineer") {
+    
+       inquirer.prompt([
+           {
+               message: "What is your engineer's name?",
+               name: "name"
+           },
+           {
+               message: "What is the engineer's id?",
+               name: "id"
+           },
+           {
+               message: "What is the engineer's email?",
+               name:"email"
+           },
+           {
+               message: "What is the engineer's GitHub username?",
+               name: "Github"
+           }
+
+       ]).then(function(response){
+
+        const Engineer = new Engineer(response.name, response.id, response.email, response.Github);
+       })
+    }
+
+})
+
+
 ​
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)

@@ -1,29 +1,33 @@
 // TODO: Write code to define and export the Employee class
 
-const inquirer  = require9("inquirer");
 
-inquirer
-.prompt([
-    {
-        message: "What is your name?",
-        name: "name"
+class Employee {
 
-    },
-    {
-        message: "What is your id?",
-        name: "id"
+    constructor(name, id, email) {
+        name = name;
+        id = id;
+        email = email;
+    }
 
-    },
-    {
-        message: "What is your email?",
-        name: "email"
-    },
+    getName(){
+        return this.name;
+    }
+
+    getId(){
+        return this.id;
+    }
+
+    getEmail(){
+        return this.email;
+    }
+
+    getRole(){
+        return Employee;
+    }
+
+}
 
 
+module.exports = employee;
 
 
-
-
-
-
-])
