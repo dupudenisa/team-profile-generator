@@ -1,3 +1,6 @@
+/*
+    Since I cannot replay the menu prompt after a employee is added the fs action to write an emplyee to the html is after each selection; 
+*/
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
@@ -21,7 +24,6 @@ function teams() {
         }
     ]).then(function (response) {
         //let template
-
 
         const role = response.role;
 
@@ -147,7 +149,7 @@ function renderHTML() {
         }
         else {
             console.log("Goodbye");
-            writeTeams();
+            //writeTeams();
             
         }
 

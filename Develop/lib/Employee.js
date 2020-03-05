@@ -10,6 +10,10 @@ class Employee {
 
     }
 
+    /* 
+        Sets variables to be used in all the child classes of the super class "Employees"
+    */
+
     getName(){
         return this.name;
     }
@@ -23,12 +27,13 @@ class Employee {
     }
 
     getRole(){
+        //sets role
         return "Employee";
     }
 
 }
 
-
+//exports class
 module.exports = Employee;
 
 

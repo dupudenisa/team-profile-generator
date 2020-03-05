@@ -5,6 +5,8 @@ const Employee = require("./Employee");
 class Engineer extends Employee{
 
     constructor(name, id, email, github) {
+
+        //super imports the variables created in the employee class
         super(name, id, email);
         this.github = github; 
 
@@ -15,10 +17,12 @@ class Engineer extends Employee{
     }
 
     getRole(){
+        //sets role
         return "Engineer"; 
     }
 
 
 }
 
+//exports class
 module.exports = Engineer;
